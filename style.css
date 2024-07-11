@@ -1,0 +1,308 @@
+:root {
+    --main-color: #1a237e;
+    --accent-color: #00bcd4;
+    --bg-color: #f5f5f5;
+    --text-color: #212121;
+    --card-bg: #ffffff;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+body.dark-mode {
+    --main-color: #3949ab;
+    --accent-color: #4dd0e1;
+    --bg-color: #212121;
+    --text-color: #ffffff;
+    --card-bg: #424242;
+}
+header {
+    background-color: var(--main-color);
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+}
+main {
+    margin-top: 60px;
+    padding: 2rem;
+}
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+    background: linear-gradient(45deg, var(--main-color), var(--accent-color));
+    color: white;
+}
+.skills-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.skill-tag {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+}
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--main-color);
+    border-radius: 4px;
+}
+.contact-form button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.section-divider {
+    height: 2px;
+    background: linear-gradient(to right, var(--main-color), var(--accent-color));
+    margin: 3rem 0;
+}
+#dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.chat-button {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    color: var(--card-bg);
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.chat-button:hover {
+    transform: scale(1.1);
+}
+
+.chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 300px;
+    height: 500px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.chat-header {
+    background-color: var(--main-color);
+    color: var(--card-bg);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Comfortaa', cursive;
+}
+
+.chat-header h3 {
+    margin: 0;
+}
+
+#close-chat {
+    background: none;
+    border: none;
+    color: var(--card-bg);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.chat-messages {
+    height: 280px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 18px;
+    max-width: 80%;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.user {
+    background-color: var(--accent-color);
+    color: var(--card-bg);
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.bot {
+    background-color: var(--main-color);
+    color: var(--card-bg);
+}
+
+.quick-replies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 5px 10px;
+}
+
+.quick-reply-btn {
+    background-color: var(--accent-color);
+    color: var(--card-bg);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: var(--transition);
+}
+
+.quick-reply-btn:hover {
+    opacity: 0.8;
+}
+
+.chat-form {
+    display: flex;
+    padding: 10px;
+}
+
+.chat-form input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid var(--main-color);
+    border-radius: 20px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.chat-form button {
+    background-color: var(--main-color);
+    color: var(--card-bg);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.chat-form button:hover {
+    background-color: var(--accent-color);
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--main-color);
+    color: var(--card-bg);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 480px) {
+    .chat-popup {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+    }
+}
+@media (max-width: 768px) {
+    .projects {
+        grid-template-columns: 1fr;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul li {
+        margin-bottom: 0.5rem;
+    }
+}

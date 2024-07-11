@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初心者プログラマーのポートフォリオ</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero fade-in-hidden">
+            <h1>初心者プログラマー太郎</h1>
+            <p>Webの世界を探求中</p>
+            <div class="skills-cloud">
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">React基礎</span>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+        <section id="about" class="fade-in-hidden">
+            <h2>About Me</h2>
+            <p>プログラミングの世界に飛び込んだばかりの初心者です。日々学習を重ね、スキルアップに励んでいます。新しい技術に対する好奇心と、問題解決への情熱を持って、エキサイティングなプロジェクトに携わりたいと考えています。</p>
+        </section>
+        <div class="section-divider"></div>
+        <section id="skills" class="fade-in-hidden">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML/CSS: レスポンシブデザインの実装、CSS Flexbox/Gridの使用</li>
+                <li>JavaScript: DOM操作、非同期処理の基礎、ES6構文の理解</li>
+                <li>Git: 基本的なバージョン管理、ブランチの作成とマージ</li>
+                <li>React: コンポーネントの作成、Hooksの基本的な使用</li>
+                <li>Node.js: 簡単なサーバーの構築、npm・パッケージ管理の基礎</li>
+            </ul>
+        </section>
+        <div class="section-divider"></div>
+        <section id="projects" class="fade-in-hidden">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3>個人ブログ</h3>
+                    <p>HTML、CSS、JavaScriptを使用して作成した静的Webサイト。レスポンシブデザインを実装し、ダークモード切替機能を追加しました。</p>
+                    <a href="#" target="_blank">プロジェクトを見る</a>
+                </div>
+                <div class="project-card">
+                    <h3>Todoリストアプリ</h3>
+                    <p>Reactを使用して作成したシンプルなTodoリストアプリ。タスクの追加、削除、完了のマークが可能です。ローカルストレージを使用してデータを保存しています。</p>
+                    <a href="#" target="_blank">プロジェクトを見る</a>
+                </div>
+                <div class="project-card">
+                    <h3>天気予報アプリ</h3>
+                    <p>JavaScript・非同期処理を学ぶために作成した天気予報アプリ。外部APIを使用して現在地の天気情報を取得し、表示します。</p>
+                    <a href="#" target="_blank">プロジェクトを見る</a>
+                </div>
+                <div class="project-card">
+                    <h3>自己紹介チャットbot</h3>
+                    <p>Difyを用いて作成した自己紹介用チャットbot。自分のデータを与えているので、それに基づいて回答を行います</p>
+                    <a href="#" target="_blank">プロジェクトを見る</a>
+                </div>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+        <section id="contact" class="fade-in-hidden">
+            <h2>Contact</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="お名前" required>
+                <input type="email" placeholder="メールアドレス" required>
+                <textarea placeholder="メッセージ" rows="5" required></textarea>
+                <button type="submit">送信</button>
+            </form>
+        </section>
+    </main>
+    <button id="dark-mode-toggle">🌓</button>
+
+    <!-- フローティングボタン -->
+    <button id="chat-button" class="chat-button" aria-label="チャットを開く">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+        </svg>
+    </button>
+    
+    <div id="chat-popup" class="chat-popup">
+        <div class="chat-header">
+            <h3>チャットボット</h3>
+            <button id="close-chat" aria-label="チャットを閉じる">×</button>
+        </div>
+        <div id="chat-messages" class="chat-messages"></div>
+        <div class="quick-replies" id="quick-replies"></div>
+        <form id="chat-form" class="chat-form">
+            <input type="text" id="chat-input" placeholder="メッセージを入力..." required>
+            <button type="submit" aria-label="送信">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+            </button>
+        </form>
+    </div>
+    
+    <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="ダークモード切替">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+            <path d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zM12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/>
+        </svg>
+    </button>
+    
+    <script src="script.js"></script>
+</body>
+</html>
